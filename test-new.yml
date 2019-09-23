@@ -1,3 +1,51 @@
 {
-  "hello":"Spring"
+  "name": "shopbookmark/list",
+  "processor": "shopbookmark_list_pre/postProcessor--> implementation of // jp.co.rakuten.bff.business.processors",
+  "features": [
+    {
+      "name": "shopbookmark_list",
+      "processor": "shopbookmark_list_feature_response_processor  // --> implementation of // jp.co.rakuten.bff.business.processors",
+      "upstreams": [
+        {
+          "name": "shopbookmark_list"
+        },
+        {
+          "name": "shopbiz_point_info",
+          "processor": "null",
+          "depends": {
+            "upstream_names": [
+              "shopbookmark_list"
+            ],
+            "processor": "shopbookmark_list_to_shop_ids"
+          }
+        },
+        {
+          "name": "gsp_shop_review",
+          "processor": "null",
+          "depends": {
+            "upstream_names": [
+              "shopbookmark_list"
+            ],
+            "processor": "shopbookmark_list_to_shop_ids"
+          }
+        }
+      ]
+    },
+    {
+      "name": "coupon",
+      "processor": "coupon_feature_pre/post_processor",
+      "upstreams": [
+        {
+          "name": "coupon",
+          "processor": "null",
+          "depends": {
+            "upstream_names": [
+              "shopbookmark_list"
+            ],
+            "processor": "shopbookmark_list_to_shop_ids"
+          }
+        }
+      ]
+    }
+  ]
 }
