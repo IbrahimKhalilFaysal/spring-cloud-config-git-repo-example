@@ -1,22 +1,54 @@
 {
   "request": {
-    "urlParameter": [
-      {
-        "name": "shop_id",
-        "type": "integer",
-        "required": true,
-        "targetName": "shopId"
-      },
-      {
-        "name": "itemId",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "name": "easyId",
-        "type": "string",
-        "required": true
-      }
-    ]
+    "urlParameter": [{
+      "name": "shop_id",
+      "type": "integer",
+      "required": true,
+      "targetName": "shopId"
+    }, {
+      "name": "itemId",
+      "type": "integer",
+      "required": true
+    }, {
+      "name": "easyId",
+      "type": "string",
+      "required": true
+    }],
+    "bodyParameter": [{
+      "name": "item.itemid",
+      "type": "integer",
+      "required": true
+    }, {
+      "name": "item.shopid",
+      "type": "integer",
+      "required": true
+    }, {
+      "name": "item.item.shop",
+      "type": "option",
+      "dataType": "integer",
+      "required": true
+    }, {
+      "name": "item.item.detailSellType",
+      "type": "option",
+      "dataType": "integer",
+      "required": true,
+      "options": [1, 2, 3, 4]
+    }],
+    "header": [{
+      "name": "contentType",
+      "type": "fixed",
+      "value": "application/json"
+    }, {
+      "name": "clientId",
+      "targetType": "urlParameter",
+      "targetName": "sid",
+      "type": "property",
+      "propType": "string",
+      "propKeyPrefix": "abc.prefix"
+    }]
+
+  },
+  "response": {
+    "selectFrom": ["response.id", "response.name"]
   }
 }
