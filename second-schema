@@ -1,0 +1,56 @@
+{
+  "schema": {
+    "second-schema": {
+     "name":"second-schema",
+      "request": {
+        "urlParameter": [
+          {
+            "name": "easyId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "bodyParameter": [
+          {
+            "name": "item.itemid",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "item.shopid",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "item.item.detailSellType",
+            "type": "option",
+            "dataType": "integer",
+            "required": true,
+            "options": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          }
+        ],
+        "header": [
+          {
+            "name": "contentType",
+            "type": "fixed",
+            "value": "application/json"
+          }
+        ]
+      },
+      "response": {
+        "selectFrom": [
+          "response.id",
+          "response.shopId",
+          "response.itemId"
+        ]
+      }
+    }
+  }
+}
