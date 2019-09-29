@@ -1,0 +1,40 @@
+
+All operations below will be inside "CacheManager" class that will be used by 
+all the services for caching
+
+Get Operations:
+--------------
+	if(cacheType == "local"){
+		getDataFromLocalCache()
+		return cachedData to caller
+	}
+	
+	if(cacheType == "shared){
+		getDataFromSharedCache()
+		return cachedData to caller
+	}
+	
+	if(cacheType == "localAndShared){
+		getDataFromLocalCache()
+		if(localCachedData == null){
+			getDataFromSharedCache()
+			sync localCache using sharedCachedData [putDataToLocalCache()]
+		}
+		return cachedData to caller
+	}
+	
+Put and Other operations Operations:
+-----------------------------------
+	if(cacheType == "local"){
+		putDataToLocalCache()
+	}
+	
+	if(cacheType == "shared){
+		putDataToSharedCache()
+	}
+	
+	if(cacheType == "localAndShared){
+		putDataToLocalCache()
+		putDataToSharedCache()
+	}
+	
