@@ -1,0 +1,58 @@
+{
+  "BodyParameters": [
+    {
+      "interfaceName": "shopList",
+      "bodyParameter": [
+        {
+          "name": "item.shopid",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "item.item.shop",
+          "type": "option",
+          "dataType": "integer",
+          "required": true
+        },
+        {
+          "name": "item.item.detailSellType",
+          "type": "option",
+          "dataType": "integer",
+          "required": true,
+          "options": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "interfaceName": "itemList",
+      "bodyParameter": [
+        {
+          "name": "item.itemid",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "item.item.shop",
+          "type": "option",
+          "dataType": "integer",
+          "required": true
+        },
+        {
+          "name": "item.item.detailSellType",
+          "type": "option",
+          "dataType": "integer",
+          "required": true,
+          "options": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}
