@@ -1,6 +1,6 @@
 {
   "schema": {
-    "filter_schema": {
+    "filterSchema": {
      "name":"second-schema",
       "request": {
         "urlParameter": [
