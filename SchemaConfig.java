@@ -1,4 +1,4 @@
-package jp.co.rakuten.gateway.config.schema;
+package com.example.demo.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -8,23 +8,15 @@ import java.util.List;
 @Configuration
 @ConfigurationProperties(prefix = "schema")
 public class SchemaConfig {
-	private Schema sampleSchema;
-	private Schema secondSchema;
 
-	public Schema getSampleSchema() {
-		return sampleSchema;
+	private List<Schema> filterSchema;
+
+	public List<Schema> getFilterSchema() {
+		return filterSchema;
 	}
 
-	public void setSampleSchema(Schema sampleSchema) {
-		this.sampleSchema = sampleSchema;
-	}
-
-	public Schema getSecondSchema() {
-		return secondSchema;
-	}
-
-	public void setSecondSchema(Schema secondSchema) {
-		this.secondSchema = secondSchema;
+	public void setFilterSchema(List<Schema> filterSchema) {
+		this.filterSchema = filterSchema;
 	}
 
 	public static class Schema {
