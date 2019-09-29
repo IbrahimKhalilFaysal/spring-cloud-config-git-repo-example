@@ -10,11 +10,6 @@
           "targetName": "shopId"
         },
         {
-          "name": "itemId",
-          "type": "integer",
-          "required": true
-        },
-        {
           "name": "easyId",
           "type": "string",
           "required": true
@@ -24,12 +19,6 @@
     {
       "interfaceName": "itemList",
       "urlParameter": [
-        {
-          "name": "shop_id",
-          "type": "integer",
-          "required": true,
-          "targetName": "shopId"
-        },
         {
           "name": "itemId",
           "type": "integer",
