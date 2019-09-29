@@ -1,5 +1,6 @@
 {
-  "BodyParameters": [
+"bodyParameters"{
+  "bodyParameterFilters": [
     {
       "interfaceName": "shopList",
       "bodyParameter": [
@@ -55,4 +56,5 @@
       ]
     }
   ]
+  }
 }
